@@ -3,8 +3,11 @@ var tableData = data;
 
 // YOUR CODE HERE!
 //level 1
+
+//select where to insert table
 var tbody = d3.select("tbody");
 
+//insert table
 data.forEach((info) => {
     var row = tbody.append("tr");
     Object.entries(info).forEach(([key, value]) => {
@@ -13,6 +16,7 @@ data.forEach((info) => {
     });
   });
 
+//filter information by clicking button
 var button = d3.select("#filter-btn")
 
 button.on("click", function() {
@@ -31,6 +35,7 @@ button.on("click", function() {
     });
 });  
 
+//create reset button and reset the table
 var resetbutton = d3.select("#reset")
 
 resetbutton.on("click", function() {
@@ -46,6 +51,7 @@ resetbutton.on("click", function() {
 
 //level 2
 
+//create dropdown menu and corresponding filtered information
 d3.selectAll("#query").on("change",update);
 function update(){
     var dropdownmenu=d3.selectAll("#query").node();
@@ -153,6 +159,7 @@ function update(){
      }
 }
 
+//create reset button and reset the table
 var reset2button = d3.select("#reset2")
 
 reset2button.on("click", function() {
